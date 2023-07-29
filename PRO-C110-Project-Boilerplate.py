@@ -36,6 +36,10 @@ while True:
 
 		# get predictions from the model
 		prediction = model.predict(normalised_image) 
+		rock = int(prediction[0][0]*100) 
+		paper = int(prediction[0][1]*100) 
+		scissor = int(prediction[0][2]*100) 
+		print(f"Rock: {rock} %, Paper: {paper} %, Scissor: {scissor} %")
 		
 		# displaying the frames captured
 		cv2.imshow('feed' , frame)
